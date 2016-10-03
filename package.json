@@ -1,0 +1,24 @@
+{
+  "name": "mealcalculator",
+  "version": "1.0.0",
+  "description": "a meal cost calculator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brendonfatland/mealCalculator.git"
+  },
+  "keywords": [
+    "meal",
+    "calculator",
+    "food"
+  ],
+  "author": "Brendon Fatland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brendonfatland/mealCalculator/issues"
+  },
+  "homepage": "https://github.com/Brendonfatland/mealCalculator#readme"
+}
