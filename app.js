@@ -5,14 +5,31 @@ this.type = type;
 this.cost = cost;
 };
 //New instance of type Diner object.
-var debby = new Diner("Debby","Steak",50);
-var john = new Diner("John","Lobster", 30);
-var totalCostOfDinnerPreTaxAndTip = john.cost + debby.cost;
+var Debby = new Diner("Debby","Steak",50);
+var John = new Diner("John","Lobster", 30);
+// variables to make printing to dom easier.
+var totalCostOfDinnerPreTaxAndTip = John.cost + Debby.cost;
 var totalCostOfDinnerWithTaxNoTip = totalCostOfDinnerPreTaxAndTip * .07 + totalCostOfDinnerPreTaxAndTip;
 var totalCostOfDinnersTip = totalCostOfDinnerWithTaxNoTip * .20 + totalCostOfDinnerWithTaxNoTip ;
-//Add two object costs together. Place in inner html of cost id.
+//targets ElementbyId inserting variable.
 document.getElementById("cost").innerHTML = totalCostOfDinnerPreTaxAndTip;
-//Calculates a 7% sales tax. Adds to tip id.
 document.getElementById("tax").innerHTML = totalCostOfDinnerWithTaxNoTip;
-//asdf
 document.getElementById("tip").innerHTML = totalCostOfDinnersTip;
+//Constructor function defining Bill template.
+var Bill = function(name, total, tax, tip){
+this.name = name;
+this.total = total;
+this.tax = tax;
+this.tip = tip;
+};
+var Diner1 = new Bill ("Diner1", 30, 2.1, 36.42);
+var Diner2 = new Bill ("Diner2", 50, 3.5, 10.7);
+//targets ElementbyId inserting variable.
+var totalOfAllDiners = Diner1.total + Diner2.total;
+var totalOfAllDinersIncludingTax = totalOfAllDiners * .07 + totalOfAllDiners;
+var totalDinerTips = totalOfAllDiners * .20 + totalOfAllDiners;
+var printBreakdownForEachDiner = Diner1.name + "- Total: " + Diner1.total + ", Tax: " + Diner1.tax + ", Tip: " + Diner1.tip + "</br>" + Diner2.name +"- Total: " + Diner2.total + ", Tax: " + Diner2.tax + ", Tip: " + Diner2.tip  ;
+//targets ElementbyId inserting variable.
+document.getElementById("totalDiners").innerHTML = totalOfAllDinersIncludingTax;
+document.getElementById("totalTips").innerHTML = totalDinerTips;
+document.getElementById("totalBreakdown").innerHTML = printBreakdownForEachDiner;
